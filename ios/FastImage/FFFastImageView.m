@@ -72,6 +72,7 @@
 }
 
 - (UIImage*) makeImage: (UIImage*)image withTint: (UIColor*)color {
+    UIImage* newImage = [image imageWithRenderingMode: UIImageRenderingModeAlwaysTemplate];
     UIGraphicsImageRendererFormat *format = [UIGraphicsImageRendererFormat defaultFormat];
     UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithSize:image.size format:format];
     UIImage *resultImage = [renderer imageWithActions:^(UIGraphicsImageRendererContext * _Nonnull rendererContext) {
